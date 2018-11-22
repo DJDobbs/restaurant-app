@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menu>
-<item>
-    <name>Waffles</name>
-    <price>$5.95</price>
-    <ingredients>eggs, flour, syrup</ingredients>
-    <allergens>eggs</allergens>
-</item>
-<item>
-    <name>Toast</name>
-    <price>$4.50</price>
-    <ingredients>flour, yeast, milk, butter</ingredients>
-    <allergens>none</allergens>
-</item>
-<item>
-    <name>Egsg</name>
-    <price>$6.95</price>
-    <ingredients>eggs, cheese, salt</ingredients>
-    <allergens>eggs, cheese</allergens>
-</item>
+	<item>
+		<name>Waffles</name>
+		<price>$5.95</price>
+		<ingredients>eggs, flour, syrup</ingredients>
+		<allergens>eggs</allergens>
+	</item>
+	<item>
+		<name>Toast</name>
+		<price>$4.50</price>
+		<ingredients>flour, yeast, milk, butter</ingredients>
+		<allergens>none</allergens>
+	</item>
+	<item>
+		<name>Egsg</name>
+		<price>$6.95</price>
+		<ingredients>eggs, cheese, salt</ingredients>
+		<allergens>eggs, cheese</allergens>
+	</item>
 </menu>
