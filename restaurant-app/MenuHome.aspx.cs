@@ -23,14 +23,14 @@ namespace restaurant_app {
                     sConnection.Close();
                 }
                 StringBuilder sBuilder = new StringBuilder();
-                sBuilder.Append("<table>");
-                sBuilder.Append("");
+                sBuilder.Append("<table width='100%'>");
+                sBuilder.Append("<tr><th>Name</th><th>Price</th><th>Ingredients</th><th>Allergens</th></tr>");
                 foreach(DataRow dRow in dTable.Rows) {
                     sBuilder.Append("<tr>");
-                    sBuilder.Append("<th>" + dRow["Name"].ToString().Trim() + "</th>");
-                    sBuilder.Append("<th>" + dRow["Price"].ToString().Trim() + "</th>");
-                    sBuilder.Append("<th>" + dRow["Ingredients"].ToString().Trim() + "</th>");
-                    sBuilder.Append("<th>" + dRow["Allergens"].ToString().Trim() + "</th>");
+                    sBuilder.Append("<td>" + dRow["Name"].ToString().Trim() + "</td>");
+                    sBuilder.Append("<td>" + dRow["Price"].ToString().Trim() + "</td>");
+                    sBuilder.Append("<td>" + dRow["Ingredients"].ToString().Trim() + "</td>");
+                    sBuilder.Append("<td>" + dRow["Allergens"].ToString().Trim() + "</td>");
                     sBuilder.Append("</tr>");
                 }
                 sBuilder.Append("</table>");
