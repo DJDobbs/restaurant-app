@@ -10,24 +10,15 @@
 namespace restaurant_app {
     
     
-    public partial class RestaurantAppHome {
+    public partial class MenuHome {
         
         /// <summary>
-        /// form1 control.
+        /// MenuDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// grvItemList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvItemList;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuDisplay;
     }
 }

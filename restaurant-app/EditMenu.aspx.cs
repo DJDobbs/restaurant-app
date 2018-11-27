@@ -6,12 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace restaurant_app {
-    public partial class RestaurantAppHome : System.Web.UI.Page {
+    public partial class EditMenu : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
     }
