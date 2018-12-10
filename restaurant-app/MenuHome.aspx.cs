@@ -31,7 +31,7 @@ namespace restaurant_app {
                     sBuilder.Append("<td>" + dRow["Price"].ToString().Trim() + "</td>");
                     sBuilder.Append("<td>" + dRow["Ingredients"].ToString().Trim() + "</td>");
                     sBuilder.Append("<td>" + dRow["Allergens"].ToString().Trim() + "</td>");
-                    sBuilder.Append("<td><button type=\"button\">Add to Cart</button></td>");
+                    sBuilder.Append("<td><a href=\"Cart?foodID="+ dRow["Name"].ToString().Trim()+"\">Add to Cart</a></td>");
                     sBuilder.Append("</tr>");
                 }
                 sBuilder.Append("</table>");
