@@ -10,15 +10,15 @@ using System.Web.UI.WebControls;
 
 namespace restaurant_app {
     public partial class Cart : System.Web.UI.Page {
-        SqlCommand sCommand = new SqlCommand();
+        SqlCommand sCommand;
+        SqlDataAdapter sAdapter;
+        SqlConnection sConnection;
         protected void Page_Load(object sender, EventArgs e) {
-            SqlDataAdapter sAdapter = new SqlDataAdapter();
             DataTable dTable = new DataTable();
-            using (SqlConnection sConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\DJD\\Documents\\Visual Studio 2017\\Projects\\restaurant-app\\restaurant-app\\App_Data\\Database.mdf\";Integrated Security = True")) {
+            using (sConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\DJD\\Documents\\Visual Studio 2017\\Projects\\restaurant-app\\restaurant-app\\App_Data\\Database.mdf\";Integrated Security = True")) {
                 using (sCommand=new SqlCommand("SELECT * FROM CartItems", sConnection)) {
                     sAdapter = new SqlDataAdapter(sCommand);
                     sConnection.Open();
-                    // To add or remove from the database, replace sAdapter.Fill(dTable); with sCommand.ExecuteNonQuery(); and update the SQL statement.
                     sAdapter.Fill(dTable);
                     sConnection.Close();
                 }
@@ -33,6 +33,29 @@ namespace restaurant_app {
                 }
                 sBuilder.Append("</table>");
                 CartDisplay.Controls.Add(new LiteralControl(sBuilder.ToString()));
+            }
+        }
+
+        protected void placeOrder(object sender, EventArgs e) {
+            using (sConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\DJD\\Documents\\Visual Studio 2017\\Projects\\restaurant-app\\restaurant-app\\App_Data\\Database.mdf\";Integrated Security = True")) {
+                using (sCommand=new SqlCommand("DELETE FROM CartItems;", sConnection)) {
+                    sAdapter = new SqlDataAdapter(sCommand);
+                    sConnection.Open();
+                    sCommand.ExecuteNonQuery();
+                    sConnection.Close();
+                }
+            }
+        }
+
+
+        protected void emptyCart(object sender, EventArgs e) {
+            using (sConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\DJD\\Documents\\Visual Studio 2017\\Projects\\restaurant-app\\restaurant-app\\App_Data\\Database.mdf\";Integrated Security = True")) {
+                using (sCommand=new SqlCommand("DELETE FROM CartItems;", sConnection)) {
+                    sAdapter = new SqlDataAdapter(sCommand);
+                    sConnection.Open();
+                    sCommand.ExecuteNonQuery();
+                    sConnection.Close();
+                }
             }
         }
     }
