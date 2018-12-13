@@ -131,10 +131,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Login.aspx" />
     <Content Include="MenuHome.aspx" />
-    <Content Include="Orders.aspx" />
+    <Content Include="OrdersPage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -231,14 +235,19 @@
     <Compile Include="MenuHome.aspx.designer.cs">
       <DependentUpon>MenuHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Orders.aspx.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
+    <Compile Include="OrdersPage.aspx.cs">
+      <DependentUpon>OrdersPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Orders.aspx.designer.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
+    <Compile Include="OrdersPage.aspx.designer.cs">
+      <DependentUpon>OrdersPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

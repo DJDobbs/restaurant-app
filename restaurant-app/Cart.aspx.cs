@@ -37,14 +37,26 @@ namespace restaurant_app {
         }
 
         protected void placeOrder(object sender, EventArgs e) {
+            DataTable dTable = new DataTable();
+            string items = "";
             using (sConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\DJD\\Documents\\Visual Studio 2017\\Projects\\restaurant-app\\restaurant-app\\App_Data\\Database.mdf\";Integrated Security = True")) {
-                using (sCommand=new SqlCommand("DELETE FROM CartItems;", sConnection)) {
+                using (sCommand=new SqlCommand("SELECT * FROM CartItems", sConnection)) {
                     sAdapter = new SqlDataAdapter(sCommand);
+                    sConnection.Open();
+                    sAdapter.Fill(dTable);
+                    sConnection.Close();
+                    foreach (DataRow dRow in dTable.Rows) {
+                        items += (" " + dRow["Name"].ToString() + " = " + dRow["Quantity"].ToString());
+                    }
+                }
+                using (sCommand=new SqlCommand("INSERT INTO Orders(Items,Status) VALUES('" + items + "', 'Received')", sConnection)) {
                     sConnection.Open();
                     sCommand.ExecuteNonQuery();
                     sConnection.Close();
                 }
             }
+            emptyCart(sender, e);
+            Response.Redirect("Cart.aspx");
         }
 
 
@@ -55,6 +67,7 @@ namespace restaurant_app {
                     sConnection.Open();
                     sCommand.ExecuteNonQuery();
                     sConnection.Close();
+                    Response.Redirect("Cart.aspx");
                 }
             }
         }
