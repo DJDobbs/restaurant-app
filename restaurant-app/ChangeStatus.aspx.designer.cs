@@ -10,15 +10,15 @@
 namespace restaurant_app {
     
     
-    public partial class AddToCart {
+    public partial class ChangeStatus {
         
         /// <summary>
-        /// AddToCartDisplay control.
+        /// ChangeStatusDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AddToCartDisplay;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ChangeStatusDisplay;
     }
 }
