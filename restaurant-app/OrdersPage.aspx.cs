@@ -32,7 +32,13 @@ namespace restaurant_app {
                     sBuilder.Append("<td>" + dRow["Cost"].ToString().Trim() + "</td>");
                     sBuilder.Append("<td>" + dRow["Tip"].ToString().Trim() + "</td>");
                     sBuilder.Append("<td>" + dRow["Status"].ToString().Trim() + "</td>");
-                    sBuilder.Append("<td><a href=\"OrdersPage?status="+ dRow["Status"].ToString().Trim()+"\">Change Status</a></td>");
+                    sBuilder.Append("<td><a href=\"ChangeStatus?number=" + dRow["ID"] + "&status=Received\">Received  </a>" +
+                        "<a href=\"ChangeStatus?number=" + dRow["ID"] + "&status=In Preparation\">  In_Preparation  </a>" +
+                        "<a href=\"ChangeStatus?number=" + dRow["ID"] + "&status=Final Touches\">  Final_Touches  </a>" +
+                        "<a href=\"ChangeStatus?number=" + dRow["ID"] + "&status=On The Way\">  On_The_Way  </a>" +
+                        "<a href=\"ChangeStatus?number=" + dRow["ID"] + "&status=Completed\">  Completed</a></td>");
+                    //sBuilder.Append("<td><asp:DropDownList ID=\"statusDrop\" runat=\"server\"><asp:ListItem Value=\"Received\">Received</asp:ListItem><asp:ListItem Value=\"InPreparation\">In Preparation</asp:ListItem><asp:ListItem Value=\"FinalTouches\">Final Touches</asp:ListItem><asp:ListItem Value=\"OnTheWay\">On The Way</asp:ListItem><asp:ListItem<asp:ListItem Value=\"Completed\">Completed</asp:ListItem></asp:DropDownList></td>");
+                    //sBuilder.Append("</tr>");
                     sBuilder.Append("</tr>");
                 }
                 sBuilder.Append("</table>");

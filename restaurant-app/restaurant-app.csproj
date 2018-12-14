@@ -112,6 +112,7 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Cart.aspx" />
+    <Content Include="ChangeStatus.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeStatus.aspx.cs">
+      <DependentUpon>ChangeStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeStatus.aspx.designer.cs">
+      <DependentUpon>ChangeStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
