@@ -37,6 +37,7 @@ namespace restaurant_app {
         }
 
         protected void placeOrder(object sender, EventArgs e) {
+            double tipAmount = Convert.ToDouble(TextBox1.Text);
             DataTable dTable = new DataTable();
             string items = "";
             using (sConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\DJD\\Documents\\Visual Studio 2017\\Projects\\restaurant-app\\restaurant-app\\App_Data\\Database.mdf\";Integrated Security = True")) {
@@ -49,7 +50,7 @@ namespace restaurant_app {
                         items += (" " + dRow["Name"].ToString() + " = " + dRow["Quantity"].ToString());
                     }
                 }
-                using (sCommand=new SqlCommand("INSERT INTO Orders(Items,Status) VALUES('" + items + "', 'Received')", sConnection)) {
+                using (sCommand=new SqlCommand("INSERT INTO Orders(Items,Tip,Status) VALUES('" + items + "','"+ tipAmount + "','Received')", sConnection)) {
                     sConnection.Open();
                     sCommand.ExecuteNonQuery();
                     sConnection.Close();
